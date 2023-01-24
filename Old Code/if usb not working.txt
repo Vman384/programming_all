@@ -1,0 +1,5 @@
+is usb not working open cmd and type
+chkdsk /f E: 
+switch the e with the name of your usb 
+once that is complete type this command switching the g with the name of your usb
+attrib -h -r -s /s /d g:\*.

@@ -1,0 +1,2378 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+	
+	<script type="text/javascript">
+		try {
+			if(self.location.href != top.location.href) { 
+				top.location = self.location; 
+			} 
+		} catch ( ex ) {
+			top.location = self.location;
+		}
+	</script>
+	
+		<meta name="description" content="" >
+<meta name="keywords" content="" >
+<meta name="robots" content="INDEX, FOLLOW" >
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" ><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgYAWVVaGwoIVlhSDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(12),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,s.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,s.now()])}var i=t("handle"),a=t(13),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(5),t(4),"addEventListener"in window&&t(3),s.xhrWrappable&&t(6),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(15)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(15)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(15)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],6:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,v,"fn-",c)}function i(t){y.push(t),h&&(g=-g,x.data=g)}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var f=t("ee"),u=f.get("xhr"),d=t(15)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var w=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,w),w.prototype=p.prototype,d.inPlace(w.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,x=document.createTextNode(g);new h(a).observe(x,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(8),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(11),h=t(10),m=window.XMLHttpRequest;a.features.xhr=!0,t(6),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(12),c=t(13),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=o(l+e,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(p+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],10:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],11:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],12:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],13:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],14:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],15:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(13),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!l.aborted||i){t&&t(n,r,o);for(var a=e(o),c=h(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[w[n]];return d&&d.push([g,n,r,a]),a}}function p(t,e){y[t]=h(t).concat(e)}function h(t){return y[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",w[n]=e,e in u||(u[e]=[])})}var y={},w={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:v,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(12),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(w,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+x.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){s("mark",["domContent",a()+x.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-x.offset}var c=(new Date).getTime(),s=t("handle"),f=t(12),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},g=m&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:c,now:a,origin:y,features:{},xhrWrappable:g};t(9),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),s("mark",["firstbyte",c],null,"api");var b=0,E=t(14)},{}]},{},["loader",2,7]);</script>
+<meta http-equiv="Content-Language" content="en-US" >
+<meta name="game" content="Arma 3" ><title>Home - StaticCommunity - Enjin</title>		
+    <!--OpenGraph Protocol-->
+    <meta property="og:title" content="Home - StaticCommunity - Enjin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.staticcommunity.tk" />
+    <meta property="og:image" content="https://s3.amazonaws.com/files.enjin.com/1292140/site_logo/avatar.png" />
+    <meta property="og:description" content="Welcome to Static" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Static" />
+
+    
+	
+				
+	            
+    			
+			
+	<link href="/" rel="canonical" >
+<link href="https://resources.enjin.com/1465083538/themes/core/js/library/markitup/skins/enjin/style.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="https://resources.enjin.com/1492531637/themes/v2/css/mentions.input.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="http://www.staticcommunity.tk/assets/1493328656/themes/core/css/core.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="https://resources.enjin.com/1495495327/themes/core/css/bbcode.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="https://resources.enjin.com/1493816406/themes/core/css/styles.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="https://resources.enjin.com/1465083538/themes/v2/css/system/user_tray.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="https://resources.enjin.com/1492532467/admin/theme/css/teamspeak/tree.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="https://resources.enjin.com/1465083537/themes/core/css/modules/mumble.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="https://resources.enjin.com/1495558161/platform/react.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="http://www.staticcommunity.tk/assets/1495552792/merged/default_fonts.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="http://www.staticcommunity.tk/assets/201705231119/themes/core/css/theme.php?theme=725283&amp;cache=201705231119-1493536468" media="screen" rel="stylesheet" type="text/css" >
+<link href="https://resources.enjin.com/1465083537/themes/core/css/widthbugfix.css" media="screen" rel="stylesheet" type="text/css" >	<style type="text/css" media="screen">
+<!--
+#page { max-width: 92%; }
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+a.tag-regular,span.tag-regular{} a.tag-admin,span.tag-admin{color: #ff0000 !important;} a.tag-untagged,span.tag-untagged{} a.tag-banned,span.tag-banned{} a.tag-online,span.tag-online{} a.tag-ts3online,span.tag-ts3online{} a.tag-minecraft_online,span.tag-minecraft_online{} a.tag-twitch_online,span.tag-twitch_online{} a.tag-twitch_users,span.tag-twitch_users{} a.tag-warned,span.tag-warned{} a.tag-punished,span.tag-punished{} a.tag-1960576,span.tag-1960576{} a.tag-1899226,span.tag-1899226{} a.tag-1895697,span.tag-1895697{} a.tag-1895691,span.tag-1895691{} a.tag-1895690,span.tag-1895690{color: #ff0000 !important;} 
+-->
+</style>	<script type="text/javascript" src="https://resources.enjin.com/1495552792/merged/default_layout.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1495539722/themes/core/js/core.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1495150469/themes/core/js/system/pusher.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1489581540/themes/core/js/library/markitup/jquery.markitup.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1489581540/themes/core/js/library/markitup/sets/bbcode/set.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/core/js/modules/html.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/v2/js/lib/underscore.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/v2/js/lib/mentions.input.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/v2/js/lib/caret.position.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1472503293/themes/core/js/modules/news.js"></script>
+<script type="text/javascript">
+    //<!--
+    var news_width_40263398 = 560;
+    //-->
+</script>
+<script type="text/javascript" src="https://resources.enjin.com/1472503293/themes/core/js/modules/paypaldonations.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/core/js/library/jstorage.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/core/js/library/date.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/core/js/library/json.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/core/js/library/jquery.idletimer.js"></script>
+<script type="text/javascript" src="https://resources.enjin.com/1465083538/themes/core/js/library/jquery.placeholder.js"></script>
+<script type="text/javascript" src="http://www.staticcommunity.tk/assets/1495552792/merged/messaging.js"></script>
+<script type="text/javascript">
+    //<!--
+    
+        Enjin_Core.punishments.ajaxLoader = 'https://resources.enjin.com/1465083537/themes/core/images/loader.gif';
+        Enjin_Core.warnings.ajaxLoader = 'https://resources.enjin.com/1465083537/themes/core/images/loader.gif';
+
+
+        Enjin_Messaging_Tray.resource_asmselect = 'https://resources.enjin.com/1465083538/themes/core/js/library/jquery.asmselect.js';
+        Enjin_Messaging_Tray.resource_bbcode = [
+            'https://resources.enjin.com/1489581540/themes/core/js/library/markitup/jquery.markitup.js',
+            'https://resources.enjin.com/1489581540/themes/core/js/library/markitup/sets/bbcode/set.js'
+        ];
+
+        Enjin_Messaging_Tray.resource_bbcode_css =  'https://resources.enjin.com/1465083538/themes/core/js/library/markitup/skins/enjin/style.css';
+        Enjin_Messaging_Tray.resource_fileuploader = 'https://resources.enjin.com/1465083538/themes/core/js/library/fileuploader.js';
+
+        $(document).ready(function(){
+            var messaging_options = {
+                goOnline: false,
+                //crosshtml: 'http://www.enjin.com/chat/postmessage',
+                crosshtml: 'https://www.enjin.com/chat/postmessage',
+                userId: 16917959,
+                siteId: 1292140            };
+
+            Enjin_Messaging_Pusher.channel_user_name = 'user_16917959_1292140';
+            Enjin_Messaging_Pusher.site_id = '1292140';
+            Enjin_Messaging_Pusher.channel_site_name = 'presence-site_1292140';
+            Enjin_Messaging_Tray.site_id = '1292140';
+            Enjin_Messaging_Tray.myself_status = 'online';
+            Enjin_Messaging.init(messaging_options);
+            Enjin_Messaging_Tray.setPrivateRequests({});
+
+            Enjin_Messaging_Tray.setSounds(1, {
+                1: 'https://resources.enjin.com/1465083538/themes/core/sound/chat.wav',
+                2: 'https://resources.enjin.com/1465083538/themes/core/sound/chat-loud.wav',
+                3: 'https://resources.enjin.com/1465083538/themes/core/sound/chat-soft.wav'
+            });
+        }); //init in "background"
+
+            //-->
+</script>
+<script type="text/javascript">
+    //<!--
+    
+    var current_session_user_id = 16917959;
+    var current_session_csrf_token = "9a589f91b1aadd653488f41497f3809a3954cec0a60a19651867637c5675ed85";
+	var current_page_id = 11601340;
+    Enjin_Core.site_id = 1292140;
+
+        //-->
+</script>
+    <!-- Universal Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        // enjin tracking
+        ga('create', 'UA-6028401-5', 'auto');
+        ga('send', 'pageview');
+
+        // custom website tracking
+            </script>
+        
+</head>
+
+<body class=" 
+    light-theme liquid" 
+    data-dnsme-update-flag="">
+
+
+
+
+
+
+<div class="body-wrap-2"><div class="body-wrap-3">
+
+
+
+<div id="page">
+	<div class="page-outer-left"></div>
+	<div class="page-outer-right"></div>
+	<div id="page-wrap">
+		<div class="fixed_height_elem" id="above-site"></div>
+		<div id="site-body">
+
+			<div class="fixed_height_elem"><table class="section-collection"><tr class="top">
+			<td class="section-border"><div class="decorator-box"></div></td>
+				<td id="section-header"
+		class="section-holder section-width-large"
+		style=""
+		data-width="1750"
+	>
+		<div class="section">
+<div id='enjin-bar' data-user_id='16917959'>
+
+	<div class='right'>
+
+		
+			<!-- Join site -->
+			
+			<!-- Mail -->
+			<a href='/dashboard/messages' id='mail-icon-link'
+				 style='display: none;'>
+				<div class='mail-icon'></div>
+			</a>
+
+			<!-- Global search -->
+			
+			<!-- Enjin bar user dropdown -->
+						
+<div class="mini-avatar"><div  class="element_avatar simple tiny"><a  data-minitooltip="Ace" data-minitooltip-userid="16917959" href="http://www.staticcommunity.tk/profile/16917959"><img src="https://s3.amazonaws.com/files.enjin.com/1292140/site_logo/small.png" onerror="this.src='https://resources.enjin.com/profile/images/avatar/tiny.png';" width="16" height="16"></a></div></div><span class='user'>
+    <a href='/profile/16917959' onmouseover="Enjin_Core.dropdownMenu([[$('#enjinbar-content-loggedin').html(),'html'],['','divider'],[$('#enjinbar-content-menu').html(),'html'],[$('#enjinbar-content-usersites').html(),'html']], $(this), 'enjinbar-menu enjinbar-menu-user', true, 0, 0);">
+        <span class="element_username tag-1895690"><span style="color:#ff0000">[LMT]</span>&nbsp;Ace</span>     </a>
+</span>
+<span class="arrow"></span><div id='enjinbar-content-loggedin'>
+    <div class='userbox'>
+        <div class='avatar'><div  class="element_avatar simple medium"><a  data-minitooltip="Ace" data-minitooltip-userid="16917959" href="http://www.staticcommunity.tk/profile/16917959"><img src="https://s3.amazonaws.com/files.enjin.com/1292140/site_logo/medium.png" onerror="this.src='https://resources.enjin.com/profile/images/avatar/medium.png';" width="43" height="43"></a></div></div>
+        <div class='username'><a href='/profile/16917959'  class='element_username tag-1895690'><span style="color:#ff0000">[LMT]</span>&nbsp;Ace</a> </div>
+        <a class='logout' href='/logout?token=df020cad3ea9ee756f89278b44918a92'>Logout</a>
+    </div>
+</div>
+
+<div id='enjinbar-content-menu'>
+    <ul class='menu-block content-menu'>
+        <li class='item item-activity'><div class='icon'></div><a href='/dashboard'>Activity</a></li>
+        <li class='item item-messages'><div class='icon'></div><a href='/dashboard/messages'>Messages</a></li>
+        <li class='item item-applications'><div class='icon'></div><a href='/dashboard/applications'>Applications</a></li>
+        <li class='item item-friends'><div class='icon'></div><a href='/dashboard/friends'>Friends</a></li>
+                    <li class='item item-games'><div class='icon'></div><a href='/dashboard/communities'>Communities</a></li>
+            <li class='item item-recruitment'><div class='icon'></div><a href='/dashboard/recruitment'>Recruitment</a></li>
+                <li class='item item-subscriptions'><div class='icon'></div><a href='/dashboard/forum'>Forum Feeds</a></li>
+        <li class='item item-settings'><div class='icon'></div><a href='/dashboard/account'>Account Settings</a></li>
+        <li class='item item-website'><div class='icon'></div><a href='/dashboard/website'>Website Settings</a></li>
+    </ul>
+</div>
+
+<div id='enjinbar-content-usersites'>
+    <div class='siteinfobox'><div class='menu-divider-line'></div><a class='more-sites' href='/profile/16917959/communities'>more &raquo;</a><div class='site'><a rel='nofollow' href='http://www.enjin.com/forums'>Enjin Forums</a></div><div class='site'><a rel='nofollow' href='http://evolutionrp.co.uk'>Evolution Network</a></div><div class='site'><a rel='nofollow' href='http://www.ozzygaming.com'>OzzyGaming</a></div><div class='site'><a rel='nofollow' href='http://www.staticcommunity.tk'>Static</a></div></div>
+</div>
+		
+	</div>
+
+	<div class='left'>
+
+		<!-- Site name -->
+					<a href='/'>Static</a>
+		
+		<!-- Voice -->
+		<a class='site-ts3-icon' href="ts3server://TS3.staticcommunity.tk"><!--  --></a>
+		<!-- Site info -->
+		<span class='divider'>|</span><a href='/page/1292140'>Site Info</a>
+		<!-- Admin dropdown / Upgrade site -->
+		
+		<!-- Social -->
+					<div id='enjin-bar-likes'>
+
+				<!-- Enjin forums / All other websites -->
+				<span class="fb-like-site"><fb:like href="http://www.staticcommunity.tk" send="false" layout="button_count" width="100" show_faces="false"></fb:like></span><span class="gplus-like-site"><g:plusone size="medium" href="http://www.staticcommunity.tk"></g:plusone></span><a href="https://twitter.com/Static_RP" class="twitter-follow-button" data-show-count="true"></a><a href="https://twitter.com/share" class="twitter-share-button twitter-like-site" data-url="https://twitter.com/Static_RP"></a>						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					
+				<!-- Site likes -->
+									<div id='enjin-like-site'>
+						<a href='javascript:void(0);' onclick='Enjin_Core.enjinLikeSite(this);' class='' id='enjin-like-site-button' title='Like this website'></a>
+						<span class='likes'>+<span>8</span></span>
+					</div>
+				
+			</div>
+		
+	</div>
+</div>		      <div class=" container_spacer first">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+				<div class="special_container first"><div class='m_html' ><style type="text/css"></style><script type="text/javascript"></script> <div class=" container_spacer first">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+				<div class="special_container first"><div class='m_html' style='padding: 0px; margin-bottom: -1px;'><style type="text/css"></style><script type="text/javascript"></script><!----------- NAVBAR CREDIT TO ATSLAYER ON ENJIN <3 ------------->
+
+<!------
+        Static Community
+--->
+
+<!---- BOOTSTRAP FILES START HERE ------>
+<script src="https://s3.amazonaws.com/files.enjin.com/1292140/bootstrap3/twitter-bootstrap-hover-dropdown.js"></script>
+<script src="https://s3.amazonaws.com/files.enjin.com/1292140/bootstrap3/profile.js"></script>
+<script src="https://s3.amazonaws.com/files.enjin.com/1292140/bootstrap3/bootstrap.min.js"></script>
+<link href="https://s3.amazonaws.com/files.enjin.com/1292140/bootstrap3/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> <!-- HERE IS CUSTOM FONT FILE. -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> <!--- HERE IS ANOTHER CUSTOM FONT FILE-->
+<!---- Mini Icon Files ------>
+<link type="text/css" rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+
+
+<!---- CUSTOM STYLES----->
+<style type="text/css">
+
+/*Like button fix*/
+#enjin-like-site-button{
+padding-right:20px;
+margin-left:4px;
+}
+#enjin-like-site .likes{
+margin-left:10px
+}
+#enjin-like-site-button{
+background:url('http://www.enjin.com/assets/20140331508/themes/core/images/icons/elike.png');
+background-position:-50px -50px;
+width:22px;
+height:19px;
+}
+
+
+
+/*CUSTOM FONTS*/
+
+#section-left .container.with-header .container_header .header_text_text {
+      font-family: 'Open Sans', sans-serif;
+    src: url(https://fonts.googleapis.com/css?family=Open+Sans) format("sans-serif");  
+}
+
+.container.with-header .container_header .header_text_text {
+    font-family: 'Open Sans', sans-serif;
+    src: url(https://fonts.googleapis.com/css?family=Open+Sans) format("sans-serif");
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*CUSTOM FONTS END*/
+
+
+#enjin-like-site-button.liked{
+background-position:-50px 0px;
+}
+
+#enjin-like-site {
+padding-left: 13px;
+margin-top: 7px;
+margin-bottom: 5px;
+}
+
+/*Hides nav until loaded*/
+.navbar{
+display:none;
+top:0px;
+font-family: 'Montserrat', sans-serif;
+}
+
+/*Positioning of our logo*/
+.navbar-brand img{
+margin-right:20px;
+margin-left:20px;
+vertical-align:middle;
+}
+
+/*Non responsive hacks*/
+
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+  float: left;
+}
+
+/*Set the width to the width of your nav*/
+.nav-container{
+width:1000px;
+margin:0 auto;
+}
+
+.navbar .nav {
+float: none;
+margin: 0 auto;
+display: table;
+padding: 0;
+}
+
+/*Removes our likes etc.*/
+#enjin-bar #enjin-bar-likes{
+display:none !important;
+}
+ 
+/*hide left and right bar*/
+#enjin-bar .right,#enjin-bar{
+    display: none;
+}
+
+.container.with-footer .container_footer {
+    background-color: #fff;
+}
+
+.navbar .nav > li > a {
+    line-height: 19px;
+    text-decoration: boldwe;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color:  #fff;
+    font-weight: bolder;
+}
+
+ /* Fix for profile info*/
+ .m_system-profile .profile-sidebar-block-community .community-info .label-info {
+    background-color: transparent !important;
+}
+
+ /*Fix for like button hover*/
+.dropdown-menu > li > a:hover > [class^="icon-"]{
+background-image:none !important;
+}
+</style>
+
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="nav-container">
+          <ul class="nav navbar-nav">
+            <li><a href="/home"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+            <li><a href="/forum"><i class="fa fa-keyboard-o"></i>&nbsp;Forum</a></li>
+            <li><a href="/store"><i class="fa fa-gbp"></i>&nbsp;Store</a></li>
+           
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="false"><i class="fa fa-gavel"></i>&nbsp;Rules <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Rules</li>
+                <li class="divider"></li>
+                <li><a href="http://staticcommunity.tk/liferules">Life Rules</a></li>
+                <li><a href="http://staticcommunity.tk/teamspeakrules">Teamspeak Rules</a></li>
+              </ul>
+            </li>
+           
+           
+           
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="false"><i class="fa fa-gavel"></i>&nbsp; Support / Feedback  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header"> Support / Feedback </li>
+                <li class="divider"></li>
+                <li><a href="http://staticcommunity.tk/MOD">Mod installation</a></li>
+                <li><a href="http://staticcommunity.tk/support">Support Ticket</a></li>
+                <li><a href="http://www.staticcommunity.tk/gamepanel">View Stats</a></li>
+              </ul>
+            </li>
+            
+            
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="false"><i class="fa fa-male"></i>&nbsp;Staff <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Tools</li>
+                <li class="divider"></li>
+                <li><a href="https://usla042.nitrado.net/webinterface/vendors/phpmyadmin/">Staff Game Panel</a></li>
+                <li><a href="/staffpunishmentguide">Staff Page</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Handbooks & Documentation</li>
+                <li class="divider"></li>
+                <li><a href="/page404">Staff Handbook - [In Progress]</a></li>
+                <li><a href="/databaseform">Staff Database Update Form</a></li>
+                <li><a href="/Staffloa">Staff LOA Request</a></li>
+                <li><a href="/staff1">Staff List</a></li>
+              </ul>
+            </li>
+            
+                        <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="false"><i class="fa fa-gamepad"></i>&nbsp;Lakeside <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Medic</li>
+                <li class="divider"></li>
+                <li><a href="https://docs.google.com/document/d/1-XDBpU8vcqNetRMOrQEj3yUq6f6krh8m1tiOKZ1fFfQ/edit">Medic: Handbook</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">PD</li>
+                <li class="divider"></li>
+                <li><a href="https://drive.google.com/drive/folders/0B2H62pgWZsrqVjE5SjllWUFSd1E">Handbooks & Laws</a></li>
+                
+              </ul>
+            </li>
+            
+                <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="false"><i class="fa fa-file-text"></i>&nbsp;Applications <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Staff</li>
+                <li class="divider"></li>
+                <li><a href="/staffapp">Staff Application</a></li>
+                <li><a href="/developerapp">Developer Application</a></li>
+                <li><a href="/techsupport">Tech Support Application</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Lakeside PD</li>
+                <li class="divider"></li>
+                <li><a href="/policeapp">Police Dept: Application</a></li>
+                <li class="divider"></li>                
+                <li class="dropdown-header">Medic</li>
+                <li class="divider"></li>
+                <li><a href="/medicapp">Medic: Application</a></li>
+
+              </ul>
+            </li>
+
+            
+         <li class="dropdown" id="boot_username">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="false"></a>
+<ul class="dropdown-menu">
+
+</ul>
+</li>
+          </ul>
+   
+      </div>
+    </div>
+
+<script> 
+jQuery('ul.nav li.dropdown').hover(function() {
+              jQuery(this).find('.dropdown-menu').stop(true, true).delay(400).fadeIn();
+            }, function() {
+              jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
+            });
+$(document).ready(function(){ 
+$( ".navbar" ).prependTo($('body'));
+$( ".navbar" ).show();
+$( "#enjin-bar .right" ).show();
+}); 
+</script></div></div>
+
+
+				      <div class=" container_spacer">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+				<div class="special_container last"><div class='m_html' ><style type="text/css"></style><script type="text/javascript"></script><div>
+<div id="titlebar">
+<div class="page-width">
+<h1 class="top-org-name"><img src="https://s3.amazonaws.com/files.enjin.com/1292140/Untitled-1.png" width="366" height="262" style="display: block; margin-left: auto; margin-right: auto;" /></h1>
+<div class="nav"><a href="home"></a></div>
+<div class="clear"></div>
+</div>
+</div>
+</div></div></div>
+
+
+		            		      <div class=" container_spacer last">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		        <div class="middle"><!--  --></div>
+		      </div>
+                        <div class='clearing'><!--  --></div>
+		</div><!-- .section -->
+	</td>
+		<td class="section-border"><div class="decorator-box"></div></td>
+	</tr>
+</table><!-- .section-collection -->
+</div><!-- -->
+	<div class="fixed_height_elem"><table class="section-collection"><tr class="top">
+			<td class="section-border"><div class="decorator-box"></div></td>
+				<td id="section-left"
+		class="section-holder section-width-small"
+		style="width: 233px;"
+		data-width="233"
+	>
+		<div class="section">		      <div class=" container_spacer first">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+									
+					<div class="container with-header first" data-container-id="48400482" data-start-collapsed="0">
+
+                    					  <div class=" container_header">
+					    <div class="left"></div>
+					    <div class="right"></div>
+					    					    <div class="title">
+							<span class="mask">
+								<div class="text">
+									<div class="header_text_text">
+										
+                                        DONATE                                    </div>
+								</div>
+							</span>
+						</div><!-- .title -->
+					    					  </div>
+                    
+					<div class="container_body">
+														
+                                                      <div class="container_left"><!--  --></div>
+                            <div class="container_right"><!--  --></div>
+                            <div class="container_left_top"><!--  --></div>
+                            <div class="container_right_top"><!--  --></div>
+                            <div class="container_left_bottom"><!--  --></div>
+                            <div class="container_right_bottom"><!--  --></div>
+                         						  
+						  <div class="container_content container-minimized" style="display: none;" >
+						  	Container minimized. <a href="javascript:;">Expand</a>
+						  </div>
+					      <div class="container_content container-maximized"  >
+					      	<div class="container_inner_l"></div><div class="container_inner_r"></div><div class="container_inner_tl"></div><div class="container_inner_tr"></div><div class="container_inner_bl"></div><div class="container_inner_br"></div>					          <table class="container_table">
+					            <tr class="container_table_row">
+																				<td class="container_column leftmost rightmost" style="width: 100%">
+										<div class="module module_first module_last">
+										      <div class="module_content">
+										        <div class="module_content_wrap">
+										
+<div class="m_paypaldonations m_paypaldonations_40413452">
+	<div class="content-info">
+		<div class="content-top">
+		    <div class="donation-title">Donate to SCRP</div>
+		    <div class="donation-description">All donations are welcome with open arms and are highly appreciated.
+
+
+Things to remember when donating:
+
+Note: If you receive a ban your donation status may be revoked.
+
+ (1) Your donation is made voluntarily, therefore donations are final and non-refundable.
+
+ (2) All money donated goes towards our hosting costs (dedicated server, licenses, website resources, etc.).
+
+ (3) Disputing donations will result in a ban.
+
+ (4) Anonymous Donations will not get any rewards.</div>
+		</div>
+	
+	    <div class="element_smalltitle">
+	        <div class="left"></div>
+	        <div class="right"></div>
+	        <div class="title"><div class="mask">Statistics</div></div>
+	    </div>
+	
+		<div class="content-statistics">
+		    <table>
+                                    <tr>
+                        <td class="label">Goal amount:</td>
+                        <td class="content">
+                            $30.00 AUD                        </td>
+                    </tr>
+                                            <tr>
+                            <td class="label">Goal date:</td>
+                            <td class="content">Jun 19, 17</td>
+                        </tr>
+                                    		    </table>
+		    
+		                    <div class="element_progressbar">
+                    <div class='left'></div>
+                    <div class='right'></div>
+                    
+                    <div class="clabel">
+                        $0.00 AUD                    </div>				
+                </div>
+		    		</div>
+	
+	    <div class="element_smalltitle">
+	        <div class="left"></div>
+	        <div class="right"></div>
+	        <div class="title"><div class="mask">Latest Donations (0)</div></div>
+	    </div>
+	    
+	    <div class="items items-donations">
+	    	
+	    </div>
+	
+	    <div class="content-last"></div>
+	</div>
+    <div class="form-donation">
+		<div class="error" style="display: none;"></div>        	
+        	
+        <div>
+			<div class="element_button pay">
+				<div class="l"></div>
+				<div class="r"></div>
+				<input type="button" value="Donate" data-type="Email" data-href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&quantity=1&business=Benkowal%40icloud.com&currency_code=AUD&item_name=Donate+to+SCRP&lc=US&notify_url=https%3A%2F%2Fbilling.enjin.com%2Fipn.php&cancel_return=http%3A%2F%2Fwww.staticcommunity.tk%2Fhome%2Fm%2F40413452%2Fop%2Fcancel&return=http%3A%2F%2Fwww.staticcommunity.tk%2Fhome%2Fm%2F40413452&item_number=mdldonation-40413452-16917959-">
+			</div>
+        
+	    	<div class="amount">
+	    		<div class='input-text'>
+                    <input type="text" name="amount" onfocus="Module_PaypalDonations.focusInput(event);" value="0.00">
+                </div>
+	    	</div>	    
+			<div class="clearing"></div>
+		</div>
+		
+		<div class="options">
+			<div class='logo'></div>
+                            <div class="chk-input"><input type="checkbox" name="anonymous" class="anonymous"></div>
+                <div class="chk-label">Donate anonymously</div>
+            			<div class="clearing"></div>
+		</div>
+    </div>
+</div>
+										        </div>
+										      </div><!-- module_content -->
+
+										
+
+										</div><!-- .module -->									</td>
+					            </tr>
+					          </table>
+					      </div><!-- .container_content -->
+					  </div><!-- .container_body -->
+
+                                              <div class=" container_footer">
+                            <div class="left"><!--  --></div>
+                            <div class="right"><!--  --></div>
+                                                    </div>
+                      
+					</div><!-- .container -->
+				
+
+
+				      <div class=" container_spacer">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+									
+					<div class="container with-header with-footer last" data-container-id="52482199" data-start-collapsed="0">
+
+                    					  <div class=" container_header">
+					    <div class="left"></div>
+					    <div class="right"></div>
+					    					    <div class="title">
+							<span class="mask">
+								<div class="text">
+									<div class="header_text_text">
+										
+                                        Servers                                    </div>
+								</div>
+							</span>
+						</div><!-- .title -->
+					    					  </div>
+                    
+					<div class="container_body">
+														
+                                                      <div class="container_left"><!--  --></div>
+                            <div class="container_right"><!--  --></div>
+                            <div class="container_left_top"><!--  --></div>
+                            <div class="container_right_top"><!--  --></div>
+                            <div class="container_left_bottom"><!--  --></div>
+                            <div class="container_right_bottom"><!--  --></div>
+                         						  
+						  <div class="container_content container-minimized" style="display: none;" >
+						  	Container minimized. <a href="javascript:;">Expand</a>
+						  </div>
+					      <div class="container_content container-maximized"  >
+					      	<div class="container_inner_l"></div><div class="container_inner_r"></div><div class="container_inner_tl"></div><div class="container_inner_tr"></div><div class="container_inner_bl"></div><div class="container_inner_br"></div>					          <table class="container_table">
+					            <tr class="container_table_row">
+																				<td class="container_column leftmost rightmost" style="width: 100%">
+										<div class="module module_first module_last">
+										      <div class="module_content">
+										        <div class="module_content_wrap">
+										<div class='m_html' ><style type="text/css"></style><script type="text/javascript"></script><p><a href="http://www.gametracker.com/server_info/218.214.246.253:2302/" target="_blank"><img src="http://cache.gametracker.com/server_info/218.214.246.253:2302/b_350_20_323957_202743_F19A15_111111.png" border="0" alt="" width="350" height="20" /></a></p></div>										        </div>
+										      </div><!-- module_content -->
+
+										
+
+										</div><!-- .module -->									</td>
+					            </tr>
+					          </table>
+					      </div><!-- .container_content -->
+					  </div><!-- .container_body -->
+
+                                              <div class=" container_footer">
+                            <div class="left"><!--  --></div>
+                            <div class="right"><!--  --></div>
+                                                    </div>
+                      
+					</div><!-- .container -->
+				
+
+
+		            		      <div class=" container_spacer last">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		        <div class="middle"><!--  --></div>
+		      </div>
+                        <div class='clearing'><!--  --></div>
+		</div><!-- .section -->
+	</td>
+			<td class="section-divider"><div class="decorator-box"></div></td>
+				<td id="section-main"
+		class="section-holder section-width-large"
+		style=""
+		data-width="1283"
+	>
+		<div class="section">		      <div class="fixed_height_elem container_spacer first">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+									
+					<div class="container with-header first last" data-container-id="48235913" data-start-collapsed="0">
+
+                    					  <div class="fixed_height_elem container_header">
+					    <div class="left"></div>
+					    <div class="right"></div>
+					    					    <div class="title">
+							<span class="mask">
+								<div class="text">
+									<div class="header_text_text">
+										
+                                        Community News &amp; Announcements                                    </div>
+								</div>
+							</span>
+						</div><!-- .title -->
+					    					  </div>
+                    
+					<div class="container_body">
+														
+                                                      <div class="container_left"><!--  --></div>
+                            <div class="container_right"><!--  --></div>
+                            <div class="container_left_top"><!--  --></div>
+                            <div class="container_right_top"><!--  --></div>
+                            <div class="container_left_bottom"><!--  --></div>
+                            <div class="container_right_bottom"><!--  --></div>
+                         						  
+						  <div class="container_content container-minimized" style="display: none;" >
+						  	Container minimized. <a href="javascript:;">Expand</a>
+						  </div>
+					      <div class="container_content container-maximized"  >
+					      	<div class="container_inner_l"></div><div class="container_inner_r"></div><div class="container_inner_tl"></div><div class="container_inner_tr"></div><div class="container_inner_bl"></div><div class="container_inner_br"></div>					          <table class="container_table">
+					            <tr class="container_table_row">
+																				<td class="container_column leftmost rightmost" style="width: 100%">
+										<div class="module module_first module_last">
+										      <div class="module_content">
+										        <div class="module_content_wrap">
+										
+<div class='m_news main' data-presetid="40263398" data-url="/home/m/40263398">
+
+    
+            <span class='float-manage' style="z-index:995" >
+        <a href="#"
+           onmouseover="Enjin_Core.dropdownMenu([
+           ['<a href=\'javascript:void(0);\' data-presetid=\'40263398\' class=\'menu-link news-new-post\'>New Post</a>','html'],                               ], $(this),'',true);">Manage</a>
+        <span class='arrow'></span>
+    </span>
+        <a href='/api/rss.php?preset_id=40263398' class='float-rss'></a>
+
+    
+        <div class='article first'>
+            <div class='article-body'>
+                <div class='article-body-content'>
+
+                    
+                        <div class='heading'>
+                                                            <div  class="element_avatar image medium"><div class="a_tl"></div><div class="a_tr"></div><div class="a_bl"></div><div class="a_br"></div><a  data-minitooltip="TTH" data-minitooltip-userid="17090085" href="http://www.staticcommunity.tk/profile/tth"><img src="https://s3.amazonaws.com/files.enjin.com/1292140/site_logo/medium.png" onerror="this.src='https://resources.enjin.com/profile/images/avatar/medium.png';" width="43" height="43"></a></div>                            
+                            <h2 class='title'  >
+                                <a href='/home/m/40263398/article/4212084' rel='bookmark'>donations</a>
+                            </h2>
+
+                            <div class='info' >
+                                <a href='/profile/tth'  class='element_username admin tag-admin'><span style="color:#ff0000">[SMT]</span>&nbsp;TTH</a>  <span class="nameicons"><span class="icon_microtag" title="a" style="cursor: default; color: #000000; background-color: #FFFF00; border: 1px solid none; border-radius: 2px;">a</span></span> posted <span class='date'>Fri at 8:22</span>
+                                
+
+                            </div>
+                        </div>
+
+                                                <div class="like-buttons">
+                            
+                                                    </div>
+
+                        <div class='article-content'>
+                            <p style="text-align: center;"><span style="color: #0000ff;">HI ALL</span></p>
+<p style="text-align: center;">Dew to us reaching the donations goal there will be a 15% discount in the store for a week&nbsp;and every week that we reach&nbsp;the goal (in a row)&nbsp;i will be uping the shop&nbsp;discount by 15%</p>
+<p style="text-align: center;"><span style="color: #ff0000;">Best Regards, TTH</span></p>
+<p style="text-align: center;"><span style="color: #ff0000;">Founder</span></p>
+<p style="text-align: center;"><span></span></p>                        </div>
+                        
+                            
+                        
+                        <div class='article-footer'>
+
+                                                            <span class='post-comment-icon'><!--  --></span><a href='/home/m/40263398/article/4212084' class='post-comment-link'>Post comment</a>
+                            
+                            
+                            
+                        </div>
+
+                    
+                </div>
+            </div>
+        </div><!-- .article -->
+
+    
+        <div class='article'>
+            <div class='article-body'>
+                <div class='article-body-content'>
+
+                    
+                        <div class='heading'>
+                                                            <div  class="element_avatar image medium"><div class="a_tl"></div><div class="a_tr"></div><div class="a_bl"></div><div class="a_br"></div><a  data-minitooltip="Jake Peralta" data-minitooltip-userid="17307438" href="http://www.staticcommunity.tk/profile/17307438"><img src="https://assets-cloud.enjin.com/users/17307438/avatar/medium.1484698720.jpeg" onerror="this.src='https://resources.enjin.com/profile/images/avatar/medium.png';" width="43" height="43"></a></div>                            
+                            <h2 class='title'  >
+                                <a href='/home/m/40263398/article/4209500' rel='bookmark'>New Map</a>
+                            </h2>
+
+                            <div class='info' >
+                                <a href='/profile/17307438'  class='element_username'><span style="color:#ff0000">[SMT]</span>&nbsp;Jake Peralta</a>  <span class="nameicons"><span class="icon_microtag" title="o" style="cursor: default; color: #000000; background-color: #00FF00; border: 1px solid none; border-radius: 2px;">o</span></span> posted <span class='date'>May 15, 17</span>
+                                
+
+                            </div>
+                        </div>
+
+                                                <div class="like-buttons">
+                            
+                                                    </div>
+
+                        <div class='article-content'>
+                            <p style="text-align: center;">Dear Members of Static Gaming, as some of you may already know, we are changing our map to Altis. If you have any issues, problems etc. feel free to contact Staff (il be on most of the time) if you have any questions regarding the new Police Department feel free to contact me aswell. Bare in mind that LOI's for any position will still be open, so be sure to send me it via website or ts.&nbsp;</p>
+<p style="text-align: center;">Best Regards, <span style="color: #339966;"><strong><em>Jake Peralta</em></strong></span></p>
+<p style="text-align: center;"><span style="color: #ff0000;">Director of Administration</span></p>
+<p style="text-align: center;"><span style="background-color: #ffffff; color: #3366ff;">Commissioner of APD</span></p>                        </div>
+                        
+                            
+                            <div class='commentbox'>
+                                <div class='commentbox-body'>
+                                    <div class='commentbox-body-left'><!--  --></div><div class='commentbox-body-right'><!--  --></div>
+                                    <div class='commentbox-header-left'><!--  --></div><div class='commentbox-header-right'><!--  --></div>
+                                    <div class='commentbox-footer-left'><!--  --></div><div class='commentbox-footer-right'><!--  --></div>
+                                    <div class='commentbox-body-content'>
+
+
+                                        <div class='bubble'>
+                                            <a href='/home/m/40263398/article/4209500'>
+                                                <div class='big-number'>1</div>
+                                                <div class='comment-text'>comment</div>
+                                            </a>
+                                        </div>
+
+                                        <div class='comments'>
+                                                                                            <div class='comment first last'>
+                                                                                                            <a href='/profile/10731501'  class='element_username'><span style="color:#ff0000">[MMT]</span>&nbsp;Andrew Thomson</a>                                                                                                         Well said Jake. I am also here to help, contact me on ts or the website :)
+
+Best Regards, Andrew Thomson                                                </div>
+                                                                                    </div><div class='clearing'><!--  --></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        <div class='article-footer'>
+
+                                                            <span class='post-comment-icon'><!--  --></span><a href='/home/m/40263398/article/4209500' class='post-comment-link'>Post comment</a>
+                            
+                            
+                            
+                        </div>
+
+                    
+                </div>
+            </div>
+        </div><!-- .article -->
+
+    
+        <div class='article'>
+            <div class='article-body'>
+                <div class='article-body-content'>
+
+                    
+                        <div class='heading'>
+                                                            <div  class="element_avatar image medium"><div class="a_tl"></div><div class="a_tr"></div><div class="a_bl"></div><div class="a_br"></div><a  data-minitooltip="Andrew Thomson" data-minitooltip-userid="10731501" href="http://www.staticcommunity.tk/profile/10731501"><img src="https://assets-cloud.enjin.com/users/10731501/avatar/medium.1494082041.png" onerror="this.src='https://resources.enjin.com/profile/images/avatar/medium.png';" width="43" height="43"></a></div>                            
+                            <h2 class='title'  >
+                                <a href='/home/m/40263398/article/4201347' rel='bookmark'>Andrew Thomson</a>
+                            </h2>
+
+                            <div class='info' >
+                                <a href='/profile/10731501'  class='element_username'><span style="color:#ff0000">[MMT]</span>&nbsp;Andrew Thomson</a>  posted <span class='date'>May 7, 17</span>
+                                
+
+                            </div>
+                        </div>
+
+                                                <div class="like-buttons">
+                            
+                                                    </div>
+
+                        <div class='article-content'>
+                            <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Dear Static Gaming Members, I am most pleased to announce to you that I will be the new Lead Administrator and I will be working very hard with the staff team on making this server a wonderful place for people to play on! If you have any issues regarding staff or admin related then please personal message or come and poke me on the Static Gaming Teamspeak!</span></p>
+<p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Best Regards, Andrew Thomson</span></p>
+<p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; color: #ff0000; font-size: 12pt;">Lead Administrator</span></p>
+<p style="text-align: center;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif; font-size: 12pt;">LSPD Superintendent</span></p>                        </div>
+                        
+                            
+                            <div class='commentbox'>
+                                <div class='commentbox-body'>
+                                    <div class='commentbox-body-left'><!--  --></div><div class='commentbox-body-right'><!--  --></div>
+                                    <div class='commentbox-header-left'><!--  --></div><div class='commentbox-header-right'><!--  --></div>
+                                    <div class='commentbox-footer-left'><!--  --></div><div class='commentbox-footer-right'><!--  --></div>
+                                    <div class='commentbox-body-content'>
+
+
+                                        <div class='bubble'>
+                                            <a href='/home/m/40263398/article/4201347'>
+                                                <div class='big-number'>2</div>
+                                                <div class='comment-text'>comments</div>
+                                            </a>
+                                        </div>
+
+                                        <div class='comments'>
+                                                                                            <div class='comment first'>
+                                                                                                            <a href='/profile/10731501'  class='element_username'><span style="color:#ff0000">[MMT]</span>&nbsp;Andrew Thomson</a>                                                                                                         Thank you very much Ace, great to be apart of the community and to work with some amazing staff :d                                                </div>
+                                                                                            <div class='comment last'>
+                                                                                                            <a href='/profile/16917959'  class='element_username tag-1895690'><span style="color:#ff0000">[LMT]</span>&nbsp;Ace</a>                                                                                                         Congrats bro                                                </div>
+                                                                                    </div><div class='clearing'><!--  --></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        <div class='article-footer'>
+
+                                                            <span class='post-comment-icon'><!--  --></span><a href='/home/m/40263398/article/4201347' class='post-comment-link'>Post comment</a>
+                            
+                            
+                            
+                        </div>
+
+                    
+                </div>
+            </div>
+        </div><!-- .article -->
+
+    
+        <div class='article'>
+            <div class='article-body'>
+                <div class='article-body-content'>
+
+                    
+                        <div class='heading'>
+                                                            <div  class="element_avatar image medium"><div class="a_tl"></div><div class="a_tr"></div><div class="a_bl"></div><div class="a_br"></div><a  data-minitooltip="Jake Peralta" data-minitooltip-userid="17307438" href="http://www.staticcommunity.tk/profile/17307438"><img src="https://assets-cloud.enjin.com/users/17307438/avatar/medium.1484698720.jpeg" onerror="this.src='https://resources.enjin.com/profile/images/avatar/medium.png';" width="43" height="43"></a></div>                            
+                            <h2 class='title'  >
+                                <a href='/home/m/40263398/article/4195813' rel='bookmark'>LSPD LOI&#039;s Open</a>
+                            </h2>
+
+                            <div class='info' >
+                                <a href='/profile/17307438'  class='element_username'><span style="color:#ff0000">[SMT]</span>&nbsp;Jake Peralta</a>  <span class="nameicons"><span class="icon_microtag" title="o" style="cursor: default; color: #000000; background-color: #00FF00; border: 1px solid none; border-radius: 2px;">o</span></span> posted <span class='date'>Apr 30, 17</span>
+                                
+
+                            </div>
+                        </div>
+
+                                                <div class="like-buttons">
+                            
+                                                    </div>
+
+                        <div class='article-content'>
+                            <p style="text-align: center;"><strong>Dear Static Gaming Members, I am pleased to announce that LOI's for any rank in the PD are from now on open, you just have to create a LOI and send it to me either on the website or ts.</strong></p>
+<p style="text-align: center;"><strong>Best Regards,&nbsp;Jake Peralta</strong></p>
+<p style="text-align: center;"><span style="color: #ff0000;"><strong>Director of Administration</strong></span></p>
+<p style="text-align: center;"><span style="color: #3366ff;"><strong>LSPD Commissioner</strong></span></p>                        </div>
+                        
+                            
+                        
+                        <div class='article-footer'>
+
+                                                            <span class='post-comment-icon'><!--  --></span><a href='/home/m/40263398/article/4195813' class='post-comment-link'>Post comment</a>
+                            
+                            
+                            
+                        </div>
+
+                    
+                </div>
+            </div>
+        </div><!-- .article -->
+
+    
+        <div class='article last'>
+            <div class='article-body'>
+                <div class='article-body-content'>
+
+                    
+                        <div class='heading'>
+                                                            <div  class="element_avatar image medium"><div class="a_tl"></div><div class="a_tr"></div><div class="a_bl"></div><div class="a_br"></div><a  data-minitooltip="TTH" data-minitooltip-userid="17090085" href="http://www.staticcommunity.tk/profile/tth"><img src="https://s3.amazonaws.com/files.enjin.com/1292140/site_logo/medium.png" onerror="this.src='https://resources.enjin.com/profile/images/avatar/medium.png';" width="43" height="43"></a></div>                            
+                            <h2 class='title'  >
+                                <a href='/home/m/40263398/article/4193132' rel='bookmark'>Server </a>
+                            </h2>
+
+                            <div class='info' >
+                                <a href='/profile/tth'  class='element_username admin tag-admin'><span style="color:#ff0000">[SMT]</span>&nbsp;TTH</a>  <span class="nameicons"><span class="icon_microtag" title="a" style="cursor: default; color: #000000; background-color: #FFFF00; border: 1px solid none; border-radius: 2px;">a</span></span> posted <span class='date'>Apr 29, 17</span>
+                                
+
+                            </div>
+                        </div>
+
+                                                <div class="like-buttons">
+                            
+                                                    </div>
+
+                        <div class='article-content'>
+                            <p style="text-align: center;"><span style="font-size: 14pt;">Hi All,</span></p>
+<p style="text-align: center;"><span style="font-size: 14pt;">We appoligize but the server is back up</span></p>
+<p style="text-align: center;"><span style="font-size: 14pt;">Regards,</span></p>
+<p style="text-align: center;"><span style="font-size: 14pt;">Saxon Ward</span></p>
+<p style="text-align: center;"><span style="font-size: 14pt;"><strong>Community Founder</strong></span></p>                        </div>
+                        
+                            
+                        
+                        <div class='article-footer'>
+
+                                                            <span class='post-comment-icon'><!--  --></span><a href='/home/m/40263398/article/4193132' class='post-comment-link'>Post comment</a>
+                            
+                            
+                            
+                        </div>
+
+                    
+                </div>
+            </div>
+        </div><!-- .article -->
+
+    
+            <div class='entries'>
+
+        <span class='next'>
+                            Newer <span class='arrow'>&raquo;</span>
+                        </span>
+
+            <span class='previous'>
+            <a href='/home/m/40263398/page/2'>                    <span class='arrow'>&laquo;</span> Older                    </a>        </span>
+
+
+            <div class='rss'><a href='/api/rss.php?preset_id=40263398'>Subscribe to RSS</a></div>
+        </div>
+
+    
+</div>										        </div>
+										      </div><!-- module_content -->
+
+										
+
+										</div><!-- .module -->									</td>
+					            </tr>
+					          </table>
+					      </div><!-- .container_content -->
+					  </div><!-- .container_body -->
+
+                                              <div class="fixed_height_elem container_footer">
+                            <div class="left"><!--  --></div>
+                            <div class="right"><!--  --></div>
+                                                    </div>
+                      
+					</div><!-- .container -->
+				
+
+
+		            		      <div class="fixed_height_elem container_spacer last">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		        <div class="middle"><!--  --></div>
+		      </div>
+                        <div class='clearing'><!--  --></div>
+		</div><!-- .section -->
+	</td>
+			<td class="section-divider"><div class="decorator-box"></div></td>
+				<td id="section-right"
+		class="section-holder section-width-small"
+		style="width: 234px;"
+		data-width="234"
+	>
+		<div class="section">		      <div class=" container_spacer first">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+									
+					<div class="container with-header with-footer first" data-container-id="52503218" data-start-collapsed="0">
+
+                    					  <div class=" container_header">
+					    <div class="left"></div>
+					    <div class="right"></div>
+					    					    <div class="title">
+							<span class="mask">
+								<div class="text">
+									<div class="header_text_text">
+										
+                                                                            </div>
+								</div>
+							</span>
+						</div><!-- .title -->
+					    					  </div>
+                    
+					<div class="container_body">
+														
+                                                      <div class="container_left"><!--  --></div>
+                            <div class="container_right"><!--  --></div>
+                            <div class="container_left_top"><!--  --></div>
+                            <div class="container_right_top"><!--  --></div>
+                            <div class="container_left_bottom"><!--  --></div>
+                            <div class="container_right_bottom"><!--  --></div>
+                         						  
+						  <div class="container_content container-minimized" style="display: none;" >
+						  	Container minimized. <a href="javascript:;">Expand</a>
+						  </div>
+					      <div class="container_content container-maximized"  >
+					      	<div class="container_inner_l"></div><div class="container_inner_r"></div><div class="container_inner_tl"></div><div class="container_inner_tr"></div><div class="container_inner_bl"></div><div class="container_inner_br"></div>					          <table class="container_table">
+					            <tr class="container_table_row">
+																				<td class="container_column leftmost rightmost" style="width: 100%">
+										<div class="module module_first module_last">
+										      <div class="module_content">
+										        <div class="module_content_wrap">
+										<div class='m_html' ><style type="text/css"></style><script type="text/javascript"></script><div class="m_html"><style type="text/css"></style><script type="text/javascript"></script><p style="text-align: center; margin-top:5px;"><strong>Step 1</strong> - Sign Up</p>
+<br>
+<p style="text-align: center; margin-top:5px;"><a id="Button" href="http://www.staticCommunity.Tk/login">Sign Up</a></p>
+<br>
+<p style="text-align: center; margin-top:5px;"><strong>Step 2</strong> - Download our mod packs</p>
+<br>
+<p style="text-align: center; margin-top:5px;"><a id="Button" href="http://steamcommunity.com/sharedfiles/filedetails/?id=909976965">Mod Pack</a></p>
+<br>
+<p style="text-align: center; margin-top:5px;"><strong>Step 3</strong> - Connect to the TeamSpeak</p>
+<br>
+<p style="text-align: center; margin-top:5px;"><a id="Button" href="ts3server://ts3.staticCommunity.Tk">TeamSpeak</a></p>
+<br>
+<p style="text-align: center;"><strong>Step 4</strong> - Connect to our server</p>
+<p style="text-align: center;"><button id="copyButton">218.214.246.253:2302</button></p>
+<script>
+function copyText(text){
+  function selectElementText(element) {
+    if (document.selection) {
+      var range = document.body.createTextRange();
+      range.moveToElementText(element);
+      range.select();
+    } else if (window.getSelection) {
+      var range = document.createRange();
+      range.selectNode(element);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+    }
+  }
+  var element = document.createElement('DIV');
+  element.textContent = text;
+  document.body.appendChild(element);
+  selectElementText(element);
+  document.execCommand('copy');
+  element.remove();
+}
+
+var btn = document.getElementById('copyButton');
+btn.addEventListener('click', function(){
+  copyText("218.214.246.253:2302");
+  btn.innerHTML = "Copied!";
+})
+
+
+document.getElementById("copyButton").onmouseover = function() {mouseOver()};
+document.getElementById("copyButton").onmouseout = function() {mouseOut()};
+
+function mouseOver() {
+    document.getElementById("copyButton").innerHTML = "Copy IP";
+}
+
+function mouseOut() {
+    document.getElementById("copyButton").innerHTML = "218.214.246.253:2302";
+}
+</script>
+
+<style>
+#copyButton {
+    border: none;
+    color: white;
+    background-color: #000000;
+    padding: 16px 16px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 95%;
+}
+
+#Button {
+    border: none;
+    color: white;
+    background-color: #000000;
+    padding: 16px 16px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 95%;
+}
+#Button:hover {
+    border: none;
+    color: white;
+    background-color: #000000;
+    padding: 16px 16px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 95%;
+}
+
+#copyButton:hover {
+    background-color: #757575;
+    color: white;
+}
+</style></div></div>										        </div>
+										      </div><!-- module_content -->
+
+										
+
+										</div><!-- .module -->									</td>
+					            </tr>
+					          </table>
+					      </div><!-- .container_content -->
+					  </div><!-- .container_body -->
+
+                                              <div class=" container_footer">
+                            <div class="left"><!--  --></div>
+                            <div class="right"><!--  --></div>
+                                                    </div>
+                      
+					</div><!-- .container -->
+				
+
+
+				      <div class=" container_spacer">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+									
+					<div class="container with-header with-footer last" data-container-id="52988340" data-start-collapsed="0">
+
+                    					  <div class=" container_header">
+					    <div class="left"></div>
+					    <div class="right"></div>
+					    					    <div class="title">
+							<span class="mask">
+								<div class="text">
+									<div class="header_text_text">
+										
+                                                                            </div>
+								</div>
+							</span>
+						</div><!-- .title -->
+					    					  </div>
+                    
+					<div class="container_body">
+														
+                                                      <div class="container_left"><!--  --></div>
+                            <div class="container_right"><!--  --></div>
+                            <div class="container_left_top"><!--  --></div>
+                            <div class="container_right_top"><!--  --></div>
+                            <div class="container_left_bottom"><!--  --></div>
+                            <div class="container_right_bottom"><!--  --></div>
+                         						  
+						  <div class="container_content container-minimized" style="display: none;" >
+						  	Container minimized. <a href="javascript:;">Expand</a>
+						  </div>
+					      <div class="container_content container-maximized"  >
+					      	<div class="container_inner_l"></div><div class="container_inner_r"></div><div class="container_inner_tl"></div><div class="container_inner_tr"></div><div class="container_inner_bl"></div><div class="container_inner_br"></div>					          <table class="container_table">
+					            <tr class="container_table_row">
+																				<td class="container_column leftmost rightmost" style="width: 100%">
+										<div class="module module_first module_last">
+										      <div class="module_content">
+										        <div class="module_content_wrap">
+										            	<style type="text/css">
+		.module .ts3-tree.tree-id-34129 .ts3-middle {
+			max-height: none;
+		}
+	</style>
+
+
+	<div class="ts3-tree ts3-tray tree-id-34129">
+		<div class="ts3-top">
+			<img class="ts3-logo" src="https://resources.enjin.com/1465083536/admin/theme/images/teamspeak/ts3logo-small.png" alt="voice">
+			<div class="ts3-top-right">
+				<a class="ts3-title ts3-join-link" href="ts3server://TS3.staticcommunity.tk/?token=rdjEYd+QO5sXfPjKpqJQke6RRG6de0hQ56yLIHyX">
+					StaticRP Network | Lakeside | Australia | www.StaticCommunity.TK				</a>
+				<div class="ts3-server ts3-online">
+					TS3.staticcommunity.tk				</div>
+			</div>
+		</div>
+
+					<div class="ts3-middle">
+				<div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/server_open.png" alt="icon"> <strong>StaticRP Network | Lakeside | Australia | www.StaticCommunity.TK</strong></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> StaticRP <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_default.png" alt="icon"> </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Social Rooms-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Social Room 1 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Social Room 2 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Social Room 3 </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Support Rooms-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Tech Support on Duty </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Support Staff on Duty </div></div><div class="mask"><div class="row"><div class='spacer' align='left'></div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Requesting Staff <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_moderated.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Requesting Compensation (need evidance) <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_moderated.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Requesting Senior Managment Team <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_moderated.png" alt="icon"> </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Support Channels-</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'></div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Support Room 1 [S/DND] <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Support Room 2 [S/DND] <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Staff Holding Room [DO NOT LEAVE] <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Support Case Case Closed [DO NOT IDLE] <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_moderated.png" alt="icon"> </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Taskforce Radio-</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Server Restart Times-</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Emergencey Services Frequencies </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Takistan Threat Level #1 Green </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Altis Threat Level #1 Green </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> TaskForceRadio <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Joining Server </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- NATO -</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- NATO APPS [OPEN</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- NATO LOI's TO BC -</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- Battalion Command -</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> General - Jake Peralta </div></div><div class="mask"><div class="row" style="color:#3687be"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/client_talk.png" alt="icon"> Ben Smith </div></div><div class="mask"><div class="row" style="color:#3687be"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/client_idle.png" alt="icon"> Jake Peralta </div></div><div class="mask"><div class="row" style="color:#3687be"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/client_talk.png" alt="icon"> Ace </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Lieutenant General - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Major General - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Brigadier General - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Colonel - Jacob Lopez </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for Battalion Command </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- Branch Command -</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Major - TBD [Patrol Ops] </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Major - TBD [Admin Ops] </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Secretary - TBD [CIA Ops] </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- N.A.T.O. -</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Captain - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> 1st Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> 2nd Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Head Supervisors Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for Patrol Division Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Patrol Lounge </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- Military Police -</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Captain - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> 1st Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> 2nd Lieutenant </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> MP Management </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for MP Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> MP Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> MP Interview Room #1 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> MP Interview Room #2 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> MP Interview Room #3 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for MP </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> MP Holding Room </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> MP Case Closed [DO NOT IDLE] </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- Human Resources -</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Captain - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> 1st Lieutenant </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> 2nd Lieutenant </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Management </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for HR Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Interview Room #1 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Interview Room #2 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Interview Room #3 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for HR </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Case Closed [DO NOT IDLE] </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- Field Training Academy -</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Captain - Victor Sam </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> 1st Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> 2nd Lieutenant </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> FTA Management </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for FTA Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Training Room #1 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Training Room #2 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Training Room #3 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> FTA Waiting Room </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> FTA Training Complete [DO NOT IDLE] </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>- Altis Police Department -</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'> -APD Applications = OPEN-</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-State Command LOI-</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-State Command-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Commissioner - Jake Peralta </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Interrim Commissioner - Ace Mclaren </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Assistant Commissioner </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Deputy Commissioner - Brian Mccaffey </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Superintendantl - Andrew Thomson </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Chief Inspectorl - TBD <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For State Command </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Operations Command-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Inspector - TBD [Patrol Ops] </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Inspector - Rick Grimes [Admin Ops] </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Inspector - TBD [Spec Ops] </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Altis Patrol-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Patrol Captain - Ben Smith <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Patrol 1st Lieutenant - John Morrow <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Patrol 2nd Lieutenant - Jones Steel <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For Patrol Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Patrol Members Lounge </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Internal Affairs-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> *IA Apps Closed* </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> IA Captain - TBD <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> IA 1st Lieutenant - TBD <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> IA 2nd Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For IA Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> IA S/DND ROOM <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> IA Members Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> IA Work Room 1 S/DND </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> IA Work Room 2 S/DND </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For IA </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Human Resources-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> HR Captain - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> HR 1st Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> HR 2nd Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for HR Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Paperwork Office #1 <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Paperwork Office #2 <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Paperwork Office #3 <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Waiting Room </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Case Cloed [DO NOT IDLE] </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Field Training Academy-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> FTA Captain - Victor Sam <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> FTA 1st Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> FTA 2nd Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For FTA Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> FTA Members Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Training Room 1 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Training Room 2 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For Interview/training </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>Takistan Red Cross</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>Applications - OPEN</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-RC: Notice Board-</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-RC High Command-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_pass.png" alt="icon"> Commissioner: Alex Avery <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_password.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Deputy Commissioner: TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Medical Chief: TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Deputy Chief: TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Assistant Chief: TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for LSVMS Command <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_moderated.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> High Command: Holding Room </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Lakeside EMS-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> LSVMS Major - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> LSVMS Captain - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> LSVMS Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For LSVMS Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> LSVMS Members Lounge </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Search and Rescue-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> S&amp;R Major - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> S&amp;R Captain - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> S&amp;R Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For S&amp;R Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> S&amp;R Members Lounge </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-LSVMS Human Resorces-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> LSVMS HR Major - SGT.A.Avery </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> LSVMS HR Captain - Ace </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> LSVMS HR Lieutenant - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For HR Command </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> HR Members Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Interview/Training Room 1 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Interview/Training Room 2 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For Interview/Training </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>      Senior Management Team</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Community Founder - Ben/TTH </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For Ben </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Community Owner - </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Community Manager </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Community Manager - </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Director of Administration -Jake Peralta </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_blank.png" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For Jake P </div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Staff Lounges-</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Lead Administration Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Head Administration Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Senior Administrator Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Administrator Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Moderator Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Trial Staff Lounge </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>  Staff / Development Channels</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Project Lead - Clif </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting For Clif <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_moderated.png" alt="icon"> </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Project Manager - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Director of Development - TBD </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Lead development Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Senior Development Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Development Lounge </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Waiting for Interview </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Scripting Development S/DND </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Map/Texture Development S/DND </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Website Development S/DND </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> TeamSpeak Development </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'> Gang Channels</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>            Away From Keyboard</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> AFK <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_flag_moderated.png" alt="icon"> </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><div class='spacer' align='center'>-Grand Theft Auto 5-</div></div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_full.png" alt="icon"> Grand Theft Auto 5 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Room 1 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Room 2 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Room 3 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_mid.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Room 4 </div></div><div class="mask"><div class="row"><img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_line.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/tree_end.gif" alt="branch"> <img src="https://resources.enjin.com/1465083537/themes/core/images/teamspeak/viewer/channel_open.png" alt="icon"> Room 5 </div></div><div class="mask"><div class="row"><div class='spacer' align='left'>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div></div></div>			</div>
+		
+		<div class="ts3-bottom-tray">
+			<div class="ts3-bigusers">3 / 5</div>
+			<div class="ts3-bottom-left">
+									
+						<span class="ts3-unsynced">Your account is unsynced</span>
+													<br><a class="ts3-show-sync ts3-join-link" href="ts3server://TS3.staticcommunity.tk/?token=rdjEYd+QO5sXfPjKpqJQke6RRG6de0hQ56yLIHyX">Sync account</a>
+						
+					
+				
+							</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+
+			<div class="ts3-hidden ts3-unsynced-container">
+			<div class="ts3-top">
+				<img class="ts3-sync-status" title="Your website account is currently unsynced, please follow one of the options below to sync"
+					 src="https://resources.enjin.com/1465083536/admin/theme/images/teamspeak/module/desynced.png">
+				<img class="ts3-logo" src="https://resources.enjin.com/1465083536/admin/theme/images/teamspeak/ts3logo-small.png" alt="voice">
+				<div class="ts3-top-right">
+					<a class="ts3-title ts3-join-link" href="ts3server://TS3.staticcommunity.tk/?token=rdjEYd+QO5sXfPjKpqJQke6RRG6de0hQ56yLIHyX">
+						StaticRP Network | Lakeside | Australia | www.StaticCommunity.TK					</a>
+					<div class="ts3-server ts3-online">
+						TS3.staticcommunity.tk					</div>
+				</div>
+				<div class="ts3-sync-header">
+					Account unsynced - Use one of the following options to sync your site account with your TS3 account:				</div>
+			</div>
+			<div class="ts3-sync">
+				<div class="ts3-legend">Option 1 - Click Connect</div>
+				<a class="ts3-connect ts3-join-link" href="ts3server://TS3.staticcommunity.tk/?token=rdjEYd+QO5sXfPjKpqJQke6RRG6de0hQ56yLIHyX">Connect to Server</a>
+
+				<div class="ts3-legend">Option 2 - Use Privilege Key</div>
+				<input class="ts3-key" type="text" value="rdjEYd+QO5sXfPjKpqJQke6RRG6de0hQ56yLIHyX" readonly="readonly">
+				<div class="ts3-legend-details">
+					If you already have an account on the TS3 server then connect &amp; input this key in Permissions &gt; Use Privilege Key.				</div>
+			</div>
+		</div>
+	    										        </div>
+										      </div><!-- module_content -->
+
+										
+
+										</div><!-- .module -->									</td>
+					            </tr>
+					          </table>
+					      </div><!-- .container_content -->
+					  </div><!-- .container_body -->
+
+                                              <div class=" container_footer">
+                            <div class="left"><!--  --></div>
+                            <div class="right"><!--  --></div>
+                                                    </div>
+                      
+					</div><!-- .container -->
+				
+
+
+		            		      <div class=" container_spacer last">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		        <div class="middle"><!--  --></div>
+		      </div>
+                        <div class='clearing'><!--  --></div>
+		</div><!-- .section -->
+	</td>
+		<td class="section-border"><div class="decorator-box"></div></td>
+	</tr>
+</table><!-- .section-collection -->
+</div><!-- -->
+	<div class="fixed_height_elem"><table class="section-collection"><tr class="top">
+			<td class="section-border"><div class="decorator-box"></div></td>
+				<td id="section-footer"
+		class="section-holder section-width-large"
+		style=""
+		data-width="1750"
+	>
+		<div class="section">		      <div class=" container_spacer first">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		      </div><div class='clearing'><!--  --></div>
+
+				<div class="special_container first last"><div class='m_html' style='padding: 0px; margin-bottom: -1px;'><style type="text/css"></style><script type="text/javascript"></script><center><a href="http://www.dmca.com/Protection/Status.aspx?ID=a60b5f5f-bcf0-4e74-9ded-3b557ef7694a" title="DMCA.com Protection Status" class="dmca-badge"> <img src="//images.dmca.com/Badges/dmca-badge-w100-5x1-04.png?ID=a60b5f5f-bcf0-4e74-9ded-3b557ef7694a" alt="DMCA.com Protection Status"></a> <script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script></center></div></div>
+
+
+		            		      <div class=" container_spacer last">
+		        <div class="left"><!--  --></div>
+		        <div class="right"><!--  --></div>
+		        <div class="middle"><!--  --></div>
+		      </div>
+                        <div class='clearing'><!--  --></div>
+		</div><!-- .section -->
+	</td>
+		<td class="section-border"><div class="decorator-box"></div></td>
+	</tr>
+</table><!-- .section-collection -->
+</div><!-- -->
+	
+
+		</div>
+
+		<div class="fixed_height_elem" id="page-footer">
+							<div class="left">
+					<a href='https://www.enjin.com/'>
+						Community website					</a>
+					by
+					<a href="https://www.enjin.com/">
+						<img src="https://resources.enjin.com/1465083537/themes/core/images/efooter.png" alt="guild hosting" title="enjin">
+					</a>
+				</div>
+				<div class="right">
+					&copy; 2017 Enjin				</div>
+					</div>
+
+  </div>
+</div>
+
+
+
+
+
+</div></div>
+
+
+
+
+
+<div id='quick-post-box' class='element_popdown' style='display: none;'><div class='inner'>
+	<div class='quick-post-title'>Quick wall post:</div>
+	<div class='wall-textarea input-textarea wall-post-input'><textarea style='height: 30px;'></textarea></div>
+
+	<div class='post-buttons'>
+		<div class='element_smallbutton wall-post-share'><div class='l'></div><div class='r'></div><input type='submit' value='Share'></div>
+		<div class='wall-post-access-box'><a class='wall-post-access' data-access='everyone' href='javascript:void(0);'>Public</a><div class='icon-locked'></div></div>
+	</div>
+<div class='tab'><div></div></div></div></div>
+
+
+<script type="text/javascript">
+$(document).ready(function() {	
+	
+	Enjin_Core.Announcements.init([]);
+	Enjin_Core.Reminders.init([]);
+});
+</script>
+<div id="site-announcements">
+	<a href="#">
+		<i class="icon-warning-sign icon"></i>
+		<span class="ann-tray-text"><span class="amount"></span> <span class="singular">Notice</span><span class="plural">Notices</span></span>
+	</a>
+	<div class="site-announcement">
+		<div class="title-bar">
+			<div class="title ann-title"></div>
+			<div class="close-wrapper"><a href="#" onclick="Enjin_Core.Announcements.close(true);return false;"><div class="close"></div></a></div>
+		</div>	
+		<div class="content"></div>
+		
+		<div class="nav-bar nav-bar-bottom">
+			<div class="nav">
+				<div class="announcements-nav">
+					<div class="element_button" onclick="Enjin_Core.Announcements.prev();return false;">
+	                    <div class="l"><!-- --></div>
+	                    <div class="r"><!-- --></div>
+	                    <input type="button" value="Prev" onclick="">
+	                </div>
+	                <div class="element_button" onclick="Enjin_Core.Announcements.next();return false;">
+	                    <div class="l"><!-- --></div>
+	                    <div class="r"><!-- --></div>
+	                    <input type="button" value="Next" onclick="">
+	                </div>
+					<div class="title title-bottom">Announcement <span class="index"></span> of <span class="total"></span></div>
+				</div>
+				
+				<div class="element_button btn-delete-ann">
+				    <div class="l"><!-- --></div>
+				    <div class="r"><!-- --></div>
+				    <input type="button" value="Delete Announcement" />
+				</div>
+				<div class="element_button btn-agree-terms">
+				    <div class="l"><!-- --></div>
+				    <div class="r"><!-- --></div>
+				    <input type="button" value="I Agree to the Terms" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="border"></div>
+</div>
+
+
+<div id="announcement-popup" class="element_popup element_popup_core element_popup_window warning-issued-popup" style="z-index: 20000; display: none;">
+    <div class="inner window-frame">
+        <div class="popup_window_title">
+        	<span class="title-text"></span>
+        	<div class="close-wrapper btn-delete-ann-x">
+        		<a href="#"><div class="close"></div></a>
+        	</div>
+        </div>
+        <div class="content">	        
+        	<div class="announcement-text">
+	        	
+        	</div>
+        	<div class="controls">
+	        	<div class="element_button prev"><div class="l"><!-- --></div><div class="r"><!-- --></div><input type="button" value="Prev" onclick=""></div>
+		        <div class="element_button next"><div class="l"><!-- --></div><div class="r"><!-- --></div><input type="button" value="Next" onclick=""></div>
+				
+				<div class="title title-bottom"><span class="index">1</span> of <span class="total">4</span> Announcement</div>
+
+	        	<div class="element_button btn-delete-ann"><div class="l"><!-- --></div><div class="r"><!-- --></div><input type="button" value="Delete Announcement"></div>
+		        <div class="element_button btn-agree"><div class="l"><!-- --></div><div class="r"><!-- --></div><input type="button" value=""></div>
+			</div>
+        </div>
+    </div>
+</div>
+<div class="announcement-canvas-separator">&nbsp;</div>
+
+
+<div id="tray-alert">
+	<span class="username"><a href="#"></a></span>
+	<span class="message"></span>
+</div>
+
+<div id='enjin-tray' class='user_tray user_tray_inner hide'>
+
+	<div class="buttons">
+		<div class="button home">
+			<div class="home_button fa fa-home"></div>
+		</div>
+		<div class="button button_open messages" data-type="message">
+			<div class="button_click messages_button fa fa-envelope "></div>
+			<div class="button_total_container hidden">
+				<div class="button_total_wrapper">
+					<div class="button_total_max hidden">999</div>
+					<div class="button_total">0</div>
+				</div>
+				<div class="button_arrow">
+					<div class="button_arrow_inner"></div>
+				</div>
+			</div>
+			<div class="button_window ">
+				<div class="window_content">
+					<div class="window_header">
+						<div class="window_close fa fa-remove"></div>
+						<div class="window_title">
+							<span class="total_value">0</span>
+							<span class="total_text" data-text="Unread Message">
+								No Unread Messages							</span>
+						</div>
+					</div>
+					<div class="window_header">
+						<div class="window_message_tab active" data-type="inbox">
+							<span>Inbox</span>
+							<span class="window_message_tab_divider">&nbsp;</span>
+							<span class="window_message_tab_total">0</span>
+						</div>
+						<div class="window_message_tab" data-type="updates">
+							<span>Updates</span>
+							<span class="window_message_tab_divider">&nbsp;</span>
+							<span class="window_message_tab_total">0</span>
+						</div>
+						<div class="window_message_tab" data-type="reports">
+							<span>Reports</span>
+							<span class="window_message_tab_divider">&nbsp;</span>
+							<span class="window_message_tab_total">0</span>
+						</div>
+						<div class="window_message_tab" data-type="notices">
+							<span>Notices</span>
+							<span class="window_message_tab_divider">&nbsp;</span>
+							<span class="window_message_tab_total">0</span>
+						</div>
+					</div>
+					<div class="window_message_container" data-type="inbox">
+						<div class="window_loading hidden"
+							data-url="/ajax.php?s=usertray&cmd=messages&type=inbox">
+							Loading...						</div>
+						<div class="window_empty ">
+							<div class="window_empty_title">
+								You have no new Messages							</div>
+
+															<div class="window_empty_text">
+									One does not simply get notifications								</div>
+								<img class="window_empty_image" src="https://files-cloud.enjin.com/empty_state/5476f58f90211.jpeg">
+							
+							<div class="window_empty_link">
+								<a href="/dashboard/messages" target="_blank">Go to Inbox</a>
+							</div>
+						</div>
+						<div class="window_filled_container hidden">
+							<div class="window_filled">
+								<div class="window_filled_inner"></div>
+							</div>
+							<div class="window_footer">
+								<a class="window_mark_read" href="">Mark all Read</a>
+								<a class="right" href="/dashboard/messages" target="_blank">Go to Inbox</a>
+							</div>
+						</div>
+					</div>
+					<div class="window_message_container hidden" data-type="updates">
+						<div class="window_loading hidden"
+							data-url="/ajax.php?s=usertray&cmd=messages&type=updates">
+							Loading...						</div>
+						<div class="window_empty ">
+							<div class="window_empty_title">
+								You have no new Messages							</div>
+							
+															<div class="window_empty_text">
+									One does not simply get notifications								</div>
+								<img class="window_empty_image" src="https://files-cloud.enjin.com/empty_state/5476f58f90211.jpeg">
+															
+							<div class="window_empty_link">
+								<a href="/dashboard/messages/updates" target="_blank">Go to Updates</a>
+							</div>
+						</div>
+						<div class="window_filled_container hidden">
+							<div class="window_filled">
+								<div class="window_filled_inner"></div>
+							</div>
+							<div class="window_footer">
+								<a class="window_mark_read" href="">Mark all Read</a>
+								<a class="right" href="/dashboard/messages/updates" target="_blank">Go to Updates</a>
+							</div>
+						</div>
+					</div>
+					<div class="window_message_container hidden" data-type="reports">
+						<div class="window_loading hidden"
+							data-url="/ajax.php?s=usertray&cmd=messages&type=reports">
+							Loading...						</div>
+						<div class="window_empty ">
+							<div class="window_empty_title">
+								You have no new Messages							</div>
+							
+															<div class="window_empty_text">
+									One does not simply get notifications								</div>
+								<img class="window_empty_image" src="https://files-cloud.enjin.com/empty_state/5476f58f90211.jpeg">
+															
+							<div class="window_empty_link">
+								<a href="/dashboard/messages/reports" target="_blank">Go to Reports</a>
+							</div>
+						</div>
+						<div class="window_filled_container hidden">
+							<div class="window_filled">
+								<div class="window_filled_inner"></div>
+							</div>
+							<div class="window_footer">
+								<a class="window_mark_read" href="">Mark all Read</a>
+								<a class="right" href="/dashboard/messages/reports" target="_blank">Go to Reports</a>
+							</div>
+						</div>
+					</div>
+					<div class="window_message_container hidden" data-type="notices">
+						<div class="window_loading hidden"
+							data-url="/ajax.php?s=usertray&cmd=messages&type=notices">
+							Loading...						</div>
+						<div class="window_empty ">
+							<div class="window_empty_title">
+								You have no new Messages							</div>
+							
+															<div class="window_empty_text">
+									One does not simply get notifications								</div>
+								<img class="window_empty_image" src="https://files-cloud.enjin.com/empty_state/5476f58f90211.jpeg">
+															
+							<div class="window_empty_link">
+								<a href="/dashboard/messages/notices" target="_blank">Go to Notices</a>
+							</div>
+						</div>
+						<div class="window_filled_container hidden">
+							<div class="window_filled">
+								<div class="window_filled_inner"></div>
+							</div>
+							<div class="window_footer">
+								<a class="window_mark_read" href="">Mark all Read</a>
+								<a class="right" href="/dashboard/messages/notices" target="_blank">Go to Notices</a>
+							</div>
+						</div>
+					</div>
+					<div class="window_box_template hidden">
+												
+		
+	<a class="box" data-id="" data-type=""
+		>
+		<img class="box_avatar" src="https://assets-cloud.enjin.com/users/1/avatar/large.1399921442.png">
+		<div class="box_data">
+			<div class="box_meta">
+				<div class="box_date">
+									</div>
+				<div class="box_delete fa fa-remove" data-url=""></div>
+				<div class="box_author">
+					<span class="element_username">Witek</span> 				</div>
+			</div>
+			<div class="box_details_single">
+				<div class="box_title">
+					<span class="fa "></span>
+					<span class="box_title_content"></span>
+				</div>
+				<div class="box_details">
+					<div class="box_details_content">
+											</div>					
+				</div>
+			</div>
+		</div>
+	</a>
+					</div>
+				</div>
+				<div class="window_arrow">
+					<div class="window_arrow_inner"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="button button_open notifications" data-type="notification">
+			<div class="button_click notifications_button fa fa-bell "></div>
+			<div class="button_total_container hidden">
+				<div class="button_total_wrapper">
+					<div class="button_total_max hidden">999</div>
+					<div class="button_total">0</div>
+				</div>
+				<div class="button_arrow">
+					<div class="button_arrow_inner"></div>
+				</div>
+			</div>
+			<div class="button_window ">
+				<div class="window_content">
+					<div class="window_header">
+						<div class="window_close fa fa-remove"></div>
+						<a class="window_page" href="/dashboard/account/notifications" target="_blank">Settings</a>
+						<div class="window_title">
+							<span class="total_value">0</span>
+							<span class="total_text" data-text="New Notification">
+								No New Notifications							</span>
+						</div>
+					</div>
+					<div class="window_loading" data-url="/ajax.php?s=usertray&cmd=notifications">
+						Loading...					</div>
+					<div class="window_empty hidden">
+						<div class="window_empty_title">
+							You have no new Notifications						</div>
+						
+													<div class="window_empty_text">
+								One does not simply get notifications							</div>
+							<img class="window_empty_image" src="https://files-cloud.enjin.com/empty_state/5476f58f90211.jpeg">
+														
+					</div>
+					<div class="window_filled_container hidden">
+						<div class="window_filled">
+							<div class="window_filled_inner"></div>
+						</div>
+						<div class="window_footer window_footer_center">
+							<a class="notifications_clear" href="/ajax.php?s=usertray&cmd=notification_delete_all">
+								Clear All							</a>
+						</div>
+					</div>
+					<div class="window_box_template hidden">
+													
+		
+	<a class="box" data-id="" data-type="" 
+		>
+					<img class="box_avatar" src="https://assets-cloud.enjin.com/users/1/avatar/large.1399921442.png">
+		
+		<div class="box_data">
+			<div class="box_meta">
+				<div class="box_date">
+									</div>
+				<div class="box_delete fa fa-remove" data-url=""></div>
+				<div class="box_author">
+											<span class="element_username">Witek</span> 									</div>
+			</div>
+
+			<div class="box_details_single hidden">
+				<div class="box_title">
+					<span class="fa "></span>
+					<span class="box_title_content"></span>
+				</div>
+				<div class="box_details">					
+					<div class="box_details_content ">
+											</div>
+					<div class="box_friend_request hidden">
+						<span class="box_friend_interact" data-question="Accept this user as friend?" data-confirm-yes="Accept"
+							data-msg="You have accepted the friend request" href="/ajax.php?s=friends&op=confirm&user_id=1">
+							Accept						</span> &middot;
+												<span class="box_friend_interact" data-question="Ignore this user?" data-confirm-yes="Ignore"
+							data-msg="You have ignored the friend request" href="/ajax.php?s=friends&op=ignore&user_id=1">
+							Ignore						</span>
+						<div class="box_friend_interact_popup hidden" data-confirm-no="Cancel"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="box_details box_details_double ">
+				<span class="fa "></span>
+				<span class="box_details_double_content">
+									</span>
+			</div>
+		</div>
+	</a>
+
+					</div>
+				</div>
+				<div class="window_arrow">
+					<div class="window_arrow_inner"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="button button_open applications" data-type="application">
+			<div class="button_click applications_button fa fa-users "></div>
+			<div class="button_total_container hidden">
+				<div class="button_total_wrapper">
+					<div class="button_total_max hidden">999</div>
+					<div class="button_total">0</div>
+				</div>
+				<div class="button_arrow">
+					<div class="button_arrow_inner"></div>
+				</div>
+			</div>
+			<div class="button_window ">
+				<div class="window_content">
+					<div class="window_header">
+						<div class="window_close fa fa-remove"></div>
+						<div class="window_title">
+							<span class="total_value">0</span>
+							<span class="total_text" data-text="New Application">
+								No New Applications							</span>
+						</div>
+					</div>
+					<div class="window_loading" data-url="/ajax.php?s=usertray&cmd=applications">
+						Loading...					</div>
+					<div class="window_empty hidden">
+						<div class="window_empty_title">
+							You have no new Applications						</div>
+
+													<div class="window_empty_text">
+								One does not simply get notifications							</div>
+							<img class="window_empty_image" src="https://files-cloud.enjin.com/empty_state/5476f58f90211.jpeg">
+						
+						<div class="window_empty_link">
+							<a href="/dashboard/applications" target="_blank">Go to Applications</a>
+						</div>
+					</div>
+					<div class="window_filled_container hidden">
+						<div class="window_filled">
+							<div class="window_filled_inner"></div>
+						</div>
+						<div class="window_footer window_footer_center">
+							<a href="/dashboard/applications" target="_blank">See All Applications</a>
+						</div>
+					</div>
+					<div class="window_box_template hidden">
+												
+		
+	<a class="box" data-id="" data-type=""
+		>
+		<img class="box_avatar" src="https://assets-cloud.enjin.com/users/1/avatar/large.1399921442.png">
+		<div class="box_data">
+			<div class="box_meta">
+				<div class="box_date">
+									</div>
+				<div class="box_delete fa fa-remove" data-url=""></div>
+				<div class="box_author">
+					<span class="element_username">Witek</span> 				</div>
+			</div>
+			<div class="box_details_single">
+				<div class="box_title">
+					<span class="fa "></span>
+					<span class="box_title_content"></span>
+				</div>
+				<div class="box_details">
+					<div class="box_details_content">
+											</div>					
+				</div>
+			</div>
+		</div>
+	</a>
+					</div>
+				</div>
+				<div class="window_arrow">
+					<div class="window_arrow_inner"></div>
+				</div>
+			</div>
+		</div>
+
+		
+        	</div>
+
+	<div class="growls">
+		<div class="inner"></div>
+		<div class="template hidden">
+			<a class="growl">
+				<img class="growl_avatar" src="">
+				<span class="growl_username element_username"></span>
+				<strong class="growl_type hidden"></strong>
+				<span class="growl_text hidden"></span>
+				<strong class="growl_game hidden"></strong>
+			</a>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		//add myself
+		Enjin_Messaging_Tray.addUsers([{"user_id":"16917959","displayname":"Ace","avatar":"https:\/\/s3.amazonaws.com\/files.enjin.com\/1292140\/site_logo\/medium.png"}]);
+						Enjin_Messaging_Tray_Chatchannel.init();
+				Enjin_Messaging_Tray.init(16917959);
+
+				Enjin_Messaging_Tray.showChatChannelOptionTray({"preset_id":"41010318","name":"CHAT ROOM","count":"21"});
+		
+	});
+</script>
+
+<div id='enjin-tray-messaging' class="user_tray " style="display: none;">
+	<div class="wrapper-container">
+		<div class="container chat">
+		</div>
+		<div class="container user-list">
+			<div class="user-list-items">
+				<div class="wrapper">
+					<div class="ulist">
+						<div class="title">
+							<div class="settings">
+								<a class="fa fa-cog" href="javascript:void(0);" onclick="Enjin_Messaging_Tray.showSettingsPanel()"></a>
+							</div>
+							<div class="minimize">
+								<a class="fa fa-remove" href="javascript:void(0);" onclick="Enjin_Messaging_Tray.hideUserList()"></a>
+							</div>
+							<a href="javascript:void(0);" onclick="Enjin_Messaging_Tray.hideUserList()">Online Users</a>
+						</div>
+						<div class="items">
+							<div class="items-panel">
+								<div class="online_users_loading">Loading...</div>
+								<div class="online_users_container hidden">
+									<div class="section section-favfriends" data-type="fav_friends">
+	<div class="section-header">
+		<div class="count">0</div>
+		<div class="name">Fav Friends</div>
+		<div class="clearing"><!-- --></div>
+	</div>
+	<div class="section-contents friends-users" data-contents="0">
+		<span class="loading">Loading...</span>
+	</div>
+</div>
+
+<div class="section section-friends" data-type="friends">
+	<div class="section-header">
+		<div class="count">0</div>
+		<div class="name">Friends</div>
+		<div class="clearing"><!-- --></div>
+	</div>
+	<div class="section-contents friends-users" data-contents="0">
+		<span class="loading">Loading...</span>
+	</div>
+</div>
+
+<div class="section section-sites" data-type="site">
+	<div class="section-header">
+		<div class="count">0</div>
+		<div class="name">Static</div>
+		<div class="clearing"><!-- --></div>
+	</div>
+	<div class="section-contents user-list friends-users" data-contents="0">
+		<span class="loading">Loading...</span>
+	</div>
+</div>
+
+<div class="section section-ingame" data-type="minecraft">
+	<div class="section-header">
+		<div class="count">0</div>
+		<div class="name">Friends In Minecraft</div>
+		<div class="clearing"><!-- --></div>
+	</div>
+	<div class="section-contents friends-users" data-contents="0">
+		<span class="loading">Loading...</span>
+	</div>
+</div>								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slist">
+						<div class="setting-items">
+							<div class="window_options_box_arrow">
+								<div class="window_options_box_arrow_inner"></div>
+							</div>
+							<div class="form-item">
+								<div class="label">Set chat quote</div>
+								<div class="input"><input type="text" name="quote" value="E is for Enjin!" /></div>
+							</div>
+							<div class="form-item">
+								<div class="label">Sound settings</div>
+								<div class="input">
+									<select name="messaging_soundsettings" id="messaging_soundsettings" onchange="Enjin_Messaging_Tray.previewSound()">
+    <option value="0">Disable sounds</option>
+    <option value="1" selected="selected">Default alert sound</option>
+    <option value="2">Loud alert sound</option>
+    <option value="3">Soft alert sound</option>
+</select>								</div>
+							</div>
+							<div class="form-item form-item-privacy">
+								<div class="input">
+									<input type="checkbox" name="chat-privacy" onclick="Enjin_Messaging_Tray.settingsUpdateChatPrivacy();" checked="checked">
+								</div>
+								<div class="label">
+									Allow non-friend chat requests								</div>
+								<div class="clearing"><!--  --></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="chat-status">
+				<div class="main-body">
+					<div class="items">
+						<div class="item">
+							<a href="javascript:void(0);" onclick="Enjin_Messaging_Tray.sendUserStatus('online')">
+								<span class="icon fa fa-user status-online"></span>
+								<span class="text">Online</span>
+							</a>
+						</div>
+						<div class="item">
+							<a href="javascript:void(0);" onclick="Enjin_Messaging_Tray.sendUserStatus('fav_friends')">
+								<span class="icon fa fa-user status-fav_friends"></span>
+								<span class="text">Fav Friends Only</span>
+							</a>
+						</div>
+						<div class="item">
+							<a href="javascript:void(0);" onclick="Enjin_Messaging_Tray.sendUserStatus('away')">
+								<span class="icon fa fa-user status-away"></span>
+								<span class="text">Away</span>
+							</a>
+						</div>
+						<div class="item">
+							<a href="javascript:void(0);" onclick="Enjin_Messaging_Tray.sendUserStatus('invisible')">
+								<span class="icon fa fa-user status-offline"></span>
+								<span class="text">Invisible</span>
+							</a>
+						</div>
+						<div class="chat_status_divider"></div>
+					</div>
+				</div>
+			</div>
+			<div class="normal">
+				<a class="mini-anchor" href="javascript:void(0);" onclick="Enjin_Messaging_Tray.showChatStatus();">
+					<span class="icon fa fa-user status-online"></span>
+					<span class="text fa fa-caret-down"></span>
+				</a>
+				<a class="anchor-text" href="javascript:void(0);" onclick="Enjin_Messaging_Tray.toggleUserList()">0 online</a>
+				<a class="minimize fa fa-angle-right" href="javascript:void(0);" onclick="Enjin_Messaging_Tray.minimizeChatStatus()"></a>
+			</div>
+			<div class="minimal">
+				<div class="notification">
+					<div class="inner"><span class="number">!</span><div class="triangle bl"></div></div>
+				</div>
+				<div class="scontent">
+					<a class="mini-anchor" href="javascript:void(0);" onclick="Enjin_Messaging_Tray.expandChatStatus();">
+						<span class="icon fa fa-user status-online"></span>
+						<span class="text">0</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="enjin-tray-chat-container-anchor" class="anchor" data-userid="">
+	<div class="notification">
+		<div class="inner"><span class="number"></span><div class="triangle bl"></div></div>
+	</div>
+	<div class="content">
+		<a href="javascript:void(0);">
+			<div class="icon bg status-online"><!--  --></div>
+			<div class="name">
+
+			</div>
+		</a>
+		<div class="close"><a class="fa fa-remove" href="javascript:void(0);"><!--  --></a></div>
+	</div>
+</div>
+
+<div id="enjin-tray-chat-channel-container-anchor" class="anchor anchor-chat-channel">
+	<div class="notification">
+		<div class="inner"><span class="number"></span><div class="triangle bl"></div></div>
+	</div>
+	<div class="content">
+		<a href="javascript:void(0);">
+			<div class="name">
+
+			</div>
+			<div class="count"><!--  --></div>
+		</a>
+		<div class="close"><a class="fa fa-remove" href="javascript:void(0);"><!--  --></a></div>
+	</div>
+</div>
+
+
+<!-- site channels template -->
+<div id="enjin-tray-chat-container" class="chat-container-user" data-userid="">
+	<div class="wrapper">
+		<div class="title">
+			<div class="avatar"></div>
+			<div class="info">
+				<div class="notfriend"><a href="javascript:void(0);" onclick=""><!--  --></a></div>
+				<div class="minimize"><a class="fa fa-minus" href="javascript:void(0);" onclick=""><!--  --></a></div>
+				<div class="username"><a target="_blank" href="javascript:void(0);" onclick=""><!--  --></a></div>
+			</div>
+			<div class="resize-anchor">
+				<div class="line"><!-- --></div>
+				<div class="line"><!-- --></div>
+				<div class="line"><!-- --></div>
+			</div>
+			<div class="clearing"><!--  --></div>
+		</div>
+		<!-- for when user decline -->
+		<div class="contents-declined">
+			<div class="declined-icon">
+				<img src="https://resources.enjin.com/1465083536/admin/theme/js/extjs/resources/images/default/shared/warning.gif" />
+			</div>
+			<div class="declined-label">
+				User declined your chat request.			</div>
+		</div>
+
+		<!-- for when user is not accepting -->
+		<div class="contents-not-friends-chat">
+			<div class="declined-icon">
+				<img src="https://resources.enjin.com/1465083536/admin/theme/js/extjs/resources/images/default/shared/warning.gif" />
+			</div>
+			<div class="declined-label">
+				User is not accepting non-friend chats.			</div>
+		</div>
+
+
+		<!-- for when user requests -->
+		<div class="contents-requested">
+			<div class="waiting">
+				<div class="b"><!--  --></div>
+				<div class="b"><!--  --></div>
+				<div class="b"><!--  --></div>
+			</div>
+			<div class="waiting-label">
+				Waiting for user to accept			</div>
+		</div>
+		<div class="contents">
+			<!-- for user that receives -->
+			<div class="contents-request">
+				<div class="request-label">
+					<span class="username"></span> wants to chat with you				</div>
+
+				<div class="request-buttons">
+					<div class="button button-accept">
+						<a href="javascript:void(0);">Accept</a>
+					</div>
+					<div class="button button-ignore">
+						<a href="javascript:void(0);">Ignore</a>
+					</div>
+					<div class="button button-block">
+						<a href="javascript:void(0);">Block</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="messages">
+			</div>
+			<div class="input-area">
+				<div class="icon-chat"><!--  --></div>
+				<input type="text" name="input-text" placeholder="Type here..." />
+				<div class="declined">
+					User has ignored you. Try later.				</div>
+			</div>
+		</div>
+		<div class="bottom-separator"></div>
+	</div>
+</div>
+
+<!-- private chat options -->
+<div class="element_popup messaging-optionsprivatechat" data-userid="0">
+	<div class="inner">
+		<div class="close"><a href="javascript:void(0);" onclick="Enjin_Messaging_Tray.hidePrivateRequestOptionsPopup()"><!-- --></a></div>
+
+		<div class="avatar">
+
+		</div>
+		<div class="message">
+			<span class="username"></span>
+		</div>
+
+		<div class="submit-area">
+			<div class="element_button">
+				<div class="l"><!-- --></div>
+				<div class="r"><!-- --></div>
+				<input type="button" onclick="Enjin_Messaging_Tray.addAsFriend()" value="Add as friend" class="btncontinue">
+			</div>
+			<div class="element_button">
+				<div class="l"><!-- --></div>
+				<div class="r"><!-- --></div>
+				<input type="button" onclick="Enjin_Messaging_Tray.ajaxIgnoreUser()" value="Ignore User" class="btncontinue">
+			</div>
+			<div class="element_button">
+				<div class="l"><!-- --></div>
+				<div class="r"><!-- --></div>
+				<input type="button" onclick="Enjin_Messaging_Tray.ajaxBlockUser()" value="Block User" class="btncontinue">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="enjin-tray-chat-user-hint">
+	<div class="wr">
+		<div class="triangle">
+			<div class="triangle_inner"></div>
+		</div>
+		<div class="round">Click to chat</div>
+	</div>
+</div>
+
+
+<div id="enjin-tray-chatchannels">
+	<div class="main-anchor"><div class="wrapper"><a href="javascript:void(0);" onclick="Enjin_Messaging_Tray_Chatchannel.clickedAnchor()"><!-- --></a></div></div>
+	<div class="wrapper-container">
+		<div class="container">
+		</div>
+	</div>
+</div>
+
+<div id="channel-loading-placeholder" class="chat-container-channel container-float"><div class="wrapper"><div class="wrapper-content"><div class="header"></div><div class="content"><div class="loading-text">Loading...</div></div></div></div></div>
+<!-- 0.197s -->
+<!-- pusher part -->
+<script src="https://js.pusher.com/1.12/pusher.min.js" type="text/javascript"></script>
+ 					<script type="text/javascript">(function() {
+			var pusher = new Pusher('8eef79f3d163a012a686', {encrypted: true, authEndpoint: '/pusher_auth.php'});
+			Pusher.channel_auth_endpoint = "/ajax.php?s=messaging&cmd=pusher-auth";
+			Enjin_Pusher.setPusher(pusher);
+		})();
+		</script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script><script type="text/javascript">var recaptcha_publickey = "6LcLBBwUAAAAABpqgDjBkM0Ixb_WC8MJdAbylruG";</script>
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-e2f9QTuI7ynec"
+};
+</script>
+<script type="text/javascript" src="https://secure.quantserve.com/quant.js" async defer></script>
+<noscript>
+<img src="https://pixel.quantserve.com/pixel/p-e2f9QTuI7ynec.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+
+<div id="fb-root"></div><script type="text/javascript">
+    //<!--
+    		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  js.async = true;
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		    //-->
+</script>
+<script type="text/javascript">
+    //<!--
+    		(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+		    //-->
+</script>
+<script type="text/javascript">
+    //<!--
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");    //-->
+</script><!-- web2.enjin.com -->
+
+
+
+
+	
+
+	
+	
+
+<!-- React \ -->
+    <script type="text/javascript" src="https://resources.enjin.com/1495558161/platform/react.js"></script>
+<!-- / React -->
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b0a6eb3b0a","applicationID":"982908","transactionName":"M11QMURQC0JZW01YXQoXfApEXARdUUJcVXMHTFsKWB5P","queueTime":0,"applicationTime":199,"atts":"HxpTRwxKGEw=","errorBeacon":"bam.nr-data.net","agent":""}</script><script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=2977d8d74f63d7f8fedbea018b7a1d05&ns=2';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script></body>
+
+</html>
