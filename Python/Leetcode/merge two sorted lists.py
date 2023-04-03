@@ -1,37 +1,34 @@
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 def main(list1,list2):
     list=[]
-    i=0
-    j=0
-    if list1==[]:
-        list=list2
-    elif list2==[]:
-        list=list1
-    else:
-        try:
-            while i <len(list1):
-                while j<len(list2):
-                    if list1[i]<list2[j]:
-                        list.append(list1[i])
-                        i+=1
-                    elif list1[i]>list2[j]:
-                        list.append(list2[j])
-                        j+=1
-                    else:
-                        list.append(list2[j])
-                        list.append(list1[i])
-                        i+=1
-                        j+=1
-        except IndexError:
-            if i==len(list1):
-                for x in range(j,len(list2)):
-                    list.append(list2[x])
-            else:
-                for x in range(i,len(list1)):
-                    list.append(list1[x])
-    return list
+    list1=ListNode(list1)
+    list2=ListNode(list2)
+    while True:
+        if list1.val==None:
+                return list2
+        elif list2.val==None:
+                return list1
+        elif list1.val>list2.val:
+            list.append(list2.val)
+            list2.next
+        elif list1.val<list2.val:
+             list.append(list1.val)
+             list1.next
+        else:
+            list.append(list1.val)
+            list.append(list2.val)
+            list1.next
+            list2.next
 
 
 
-list1 = [0]
+
+
+
+list1 = [1,2,4]
 list2 = [1, 3, 4]
 print(main(list1,list2))
