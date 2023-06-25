@@ -3,32 +3,35 @@ class ListNode(object):
         self.val = val
         self.next = next
 
-def main(list1,list2):
-    list=[]
-    list1=ListNode(list1)
-    list2=ListNode(list2)
-    while True:
-        if list1.val==None:
-                return list2
-        elif list2.val==None:
-                return list1
-        elif list1.val>list2.val:
-            list.append(list2.val)
-            list2.next
-        elif list1.val<list2.val:
-             list.append(list1.val)
-             list1.next
+def main(list1: ListNode,list2: ListNode):
+    merged = dummy = ListNode()
+    while list1 and list2:
+        if list1.val < list2.val:
+            merged.next = list1
+            list1 = list1.next
+            merged = merged.next
+        elif list1.val > list2.val:
+            merged.next = list2
+            list2 = list2.next
+            merged = merged.next
         else:
-            list.append(list1.val)
-            list.append(list2.val)
-            list1.next
-            list2.next
+            merged.next = list1
+            list1 = list1.next
+            merged = merged.next
+            merged.next = list2
+            list2 = list2.next
+            merged = merged.next
+    if list1 or list2:
+        merged.next = list1 if list1 else list2
+    return dummy.next
 
 
 
+list1 = ListNode(1,ListNode(2,ListNode(4,None)))
+list2= ListNode(1,ListNode(3,ListNode(4,None)))
 
-
-
-list1 = [1,2,4]
-list2 = [1, 3, 4]
 print(main(list1,list2))
+
+
+
+
