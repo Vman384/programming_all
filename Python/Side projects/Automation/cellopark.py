@@ -44,4 +44,11 @@ zone.click()
 
 start = driver.find_element(by=By.ID, value='StartStopBtn')
 start.click()
+driver.implicitly_wait(20)
+try:
+    confirm = driver.find_element(by=By.ID, value='//*[@id="bot2-Msg1"]')
+    confirm.click()
+    print("button clicked")
+except:
+    pass
 input()
